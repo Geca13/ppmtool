@@ -37,7 +37,7 @@ import classnames from 'classnames'
             startDate,
             endDate
 
-        } = nextProps.project
+        } = nextProps.project;
 
         this.setState({
 

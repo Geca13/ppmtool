@@ -13,9 +13,16 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CustomResponseHendler extends ResponseEntityExceptionHandler{
 	
 	@ExceptionHandler
-	public final ResponseEntity<?> handleException(IdentifierException ex, WebRequest request){
+	public final ResponseEntity<Object> handleException(IdentifierException ex, WebRequest request){
 		IdentifierExceptionResponse response = new IdentifierExceptionResponse(ex.getMessage());
 		return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler
+	public final ResponseEntity<Object> handleProjectNotFound(ProjectNotFoundException ex, WebRequest request){
+		ProjectNotFoundExceptionResponse response = new ProjectNotFoundExceptionResponse(ex.getMessage());
+		return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
+	}
+	
 
 }

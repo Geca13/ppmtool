@@ -24,5 +24,11 @@ public class CustomResponseHendler extends ResponseEntityExceptionHandler{
 		return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
 	}
 	
+	@ExceptionHandler
+	public final ResponseEntity<Object> usernameExist(UsernameExistException ex, WebRequest request){
+		UsernameAllrearyExistResponse response = new UsernameAllrearyExistResponse(ex.getMessage());
+		return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
+	}
+	
 
 }

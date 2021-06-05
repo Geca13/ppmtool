@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		.authorizeRequests()
 		.antMatchers(
-				
+				 "/",
 				"/favicon.ico",
 				"/**/*.png",
 				"/**/*.gif",
@@ -39,8 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				
 				
 				)
-		.permitAll()
-		.antMatchers("/api/users/register")
 		.permitAll()
 		.antMatchers("/api/users/**")
 		.permitAll()

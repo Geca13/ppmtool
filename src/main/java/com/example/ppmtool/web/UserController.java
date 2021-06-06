@@ -19,7 +19,7 @@ import com.example.ppmtool.service.UserService;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-	
+	/*
 	@Autowired
 	MapValidationService errorService;
 	
@@ -37,5 +37,6 @@ public class UserController {
 		
 		return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
 	}
+	*/
 
 }

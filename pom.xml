@@ -59,6 +59,8 @@
     
 </dependency>
 
+<!--  
+
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt</artifactId>
@@ -74,8 +76,9 @@
 <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
+    
     </dependency>
-
+-->
 
 
 	</dependencies>

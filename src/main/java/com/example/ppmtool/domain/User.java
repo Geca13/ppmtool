@@ -1,6 +1,6 @@
 package com.example.ppmtool.domain;
 
-import java.util.Collection;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,12 +13,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements UserDetails {
+public class User  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,47 +56,6 @@ public class User implements UserDetails {
 		this.updated_At = new Date();
 	}
 
-	@Override
-	@JsonIgnore
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	@JsonIgnore
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return this.email;
-	}
-
-	@Override
-	@JsonIgnore
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	@JsonIgnore
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	@JsonIgnore
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	@JsonIgnore
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 	
 	
 

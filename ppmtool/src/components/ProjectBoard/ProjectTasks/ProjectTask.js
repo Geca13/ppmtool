@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { deleteProjectTask } from '../../../actions/backlogActions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
 
 class ProjectTask extends Component {
     render() {
@@ -48,5 +51,8 @@ class ProjectTask extends Component {
         );
     }
 }
+ProjectTask.propTypes = {
+    deleteProjectTask:PropTypes.func.isRequired
+}
 
-export default ProjectTask;
+export default connect(null, {deleteProjectTask})(ProjectTask);

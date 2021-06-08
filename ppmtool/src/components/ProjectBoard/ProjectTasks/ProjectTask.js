@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
 class ProjectTask extends Component {
+
+    onDeleteClick(backlog_id, pt_id) {
+    this.props.deleteProjectTask(backlog_id, pt_id);
+  }
     render() {
 
         const {project_task} = this.props;
@@ -43,9 +47,16 @@ class ProjectTask extends Component {
                                 View / Update
                             </Link>
 
-                            <button className="btn btn-danger ml-4">
-                                Delete
-                            </button>
+                             <button
+            className="btn btn-danger ml-4"
+            onClick={this.onDeleteClick.bind(
+              this,
+              project_task.identifier,
+              project_task.projectSequence
+            )}
+          >
+            Delete
+          </button>
                         </div>
                     </div>
         );

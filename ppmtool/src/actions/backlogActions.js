@@ -52,7 +52,7 @@ export const getProjectTask = (backlog_id, pt_id, history) => async dispatch =>{
 
 }
 
-export const updateProjectTask = (backlog_id, pt_id, history) => async dispatch => {
+export const updateProjectTask = (backlog_id, pt_id,project_task, history) => async dispatch => {
 
     try {
         await axios.patch(`/api/backlog/${backlog_id}/${pt_id}`, project_task)
@@ -70,12 +70,12 @@ export const updateProjectTask = (backlog_id, pt_id, history) => async dispatch 
     }
 }
 
-export const deleteProjectTask = {backlog_id, pt_id} = async dispatch => {
+export const deleteProjectTask = (backlog_id, pt_id) => async dispatch => {
     if(window.confirm(`you are deleting task ${pt_id}`)) {
-        await axios.delete(`/api/backlog/${backlog_id}/${pt_id}`)
+        await axios.delete(`/api/backlog/${backlog_id}/${pt_id}`);
         dispatch({
             type: DELETE_PROJECT_TASK,
-            payload:pt_id
-        })
+            payload: pt_id
+        });
     }
-}
+};
